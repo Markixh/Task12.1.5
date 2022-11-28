@@ -4,7 +4,34 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            List<User> users = new List<User>();
+
+            User user1 = new User();
+            user1.Login = "user1";
+            user1.IsPremium = true;
+            user1.Name = "Андрей";
+            users.Add(user1);
+
+            User user2 = new User();
+            user2.Login = "user2";
+            user2.IsPremium = true;
+            user2.Name = "Елена";
+            users.Add(user2);
+
+            User user3 = new User();
+            user3.Login = "user3";
+            user3.IsPremium = false;
+            user3.Name = "Ольга";
+            users.Add(user3);
+
+            foreach (User user in users)
+            {
+                Console.WriteLine("Привет " + user.Name);
+                if (!user.IsPremium)
+                {
+                    ShowAds();
+                }                
+            }
         }
 
         class User
